@@ -13,9 +13,14 @@ module.exports = {
                 test: /\.css$/, // 用于匹配资源，使用正则表达式匹配
                 use: [
                     // { loader: "css-loader" }
+                    "style-loader", // 添加style-loader，注意loader的编译是从后往前
                     "css-loader"
                 ],
                 // loader: "css-loader"
+            },
+            {
+                test: /\.less$/,
+                use: ["style-loader", "css-loader", "less-loader"]
             }
         ]
     }
