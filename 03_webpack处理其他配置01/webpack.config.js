@@ -39,6 +39,18 @@ module.exports = {
                     "less-loader"
                 ]
             },
+            {
+                test: /\.(jpe?g|png|svg)$/,
+                use: [
+                    {
+                        loader: "url-loader",
+                        options: {
+                            name: "img/[name].[hash:6].[ext]", // 指定输出的文件名
+                            // outputPath: "img" // 一般不用，一般直接写在上面的name中
+                        }
+                    }
+                ]
+            }
         ]
     }
 }

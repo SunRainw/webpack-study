@@ -2,5 +2,5 @@
 
 .bg-image {
     display: inline-block;
-    background-image: url("../img/nhlt.jpg") contain;
+    background: url("../img/nhlt.jpg");
 }
