@@ -1,0 +1,8 @@
+.content {
+    color: #ff000033;
+}
+:fullscreen {}
+
+.content {
+    user-select: none;
+}

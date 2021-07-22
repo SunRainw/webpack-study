@@ -6,4 +6,4 @@ const priceFormat = price => {
     return "100.00"
 }
 
-module.exports = { dateFormate, priceFormate }
+module.exports = { dateFormat, priceFormat }

@@ -1,4 +1,8 @@
 const path = require("path")
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { DefinePlugin } = require("webpack")
+const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 // webpack是使用CommonJS的方式导入的，所以此处需要使用CommonJS的方式导出
 module.exports = {
@@ -33,7 +37,7 @@ module.exports = {
                         options: {
                             importLoaders: 2
                         }
-                        
+
                     },
                     "postcss-loader",
                     "less-loader"
@@ -59,5 +63,25 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({ title: "SunRain Webpack", template: "./public/index.html" }), // 可以在里面传一个对象，title属性就是配置index.html的title
+        new DefinePlugin({
+            BASE_URL: '"./"', // 如果不加''就类似 const BASE_URL = ./
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: "public",
+                    globOptions: {
+                        ignore: [
+                            "**/.DS_Store",
+                            "**/index.html",
+                        ]
+                    }
+                }
+            ]
+        })
+    ]
 }
