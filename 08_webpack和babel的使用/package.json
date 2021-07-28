@@ -1,0 +1,23 @@
+{
+  "name": "03_webpack_other_config",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {
+    "core-js": "^3.15.2",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-typescript": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "html-webpack-plugin": "^5.3.2",
+    "webpack": "^5.44.0",
+    "webpack-cli": "^4.7.2"
+  }
+}
