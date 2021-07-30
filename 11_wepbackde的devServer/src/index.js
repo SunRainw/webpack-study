@@ -13,3 +13,14 @@
  */
 
 console.info(1231)
+import Vue from "vue"
+import VueApp from "./App.vue"
+import React from "react"
+import ReactDom from "react-dom"
+import ReactApp from "./App.jsx"
+
+ReactDom.render(<ReactApp/>, document.getElementById("root"));
+
+new Vue({
+  render: h => h(VueApp) 
+}).$mount("#app")
